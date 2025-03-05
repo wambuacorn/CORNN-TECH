@@ -17,29 +17,26 @@ const util = require('util')
 const { sms,downloadMediaMessage } = require('./lib/msg')
 const axios = require('axios')
 const { File } = require('megajs')
-const prefix = '.'
+const prefix = '.'
 
-const ownerNumber = ['94779415698']
-
+const ownerNumber = ['254716226465']
 //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
 if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
 const sessdata = config.SESSION_ID
-const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
+const filer = File.fromURL(https://mega.nz/file/${sessdata})
 filer.download((err, data) => {
 if(err) throw err
 fs.writeFile(__dirname + '/auth_info_baileys/creds.json', data, () => {
-console.log("Session downloaded ✅")
+console.log("Session downloaded ✅")
 })})}
-
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 8000;
-
+const port = process.env.PORT || 8000;
 //=============================================
 
 async function connectToWA() {
-console.log("Connecting wa bot 🧬...");
+console.log("Connecting CORNEH TC 🧬...");
 const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/')
 var { version } = await fetchLatestBaileysVersion()
 
@@ -50,15 +47,14 @@ const conn = makeWASocket({
         syncFullHistory: true,
         auth: state,
         version
-        })
-    
-conn.ev.on('connection.update', (update) => {
+        })
+        conn.ev.on('connection.update', (update) => {
 const { connection, lastDisconnect } = update
 if (connection === 'close') {
 if (lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut) {
 connectToWA()
 }
-} else if (connection === 'open') {
+        } else if (connection === 'open') {
 console.log('😼 Installing... ')
 const path = require('path');
 fs.readdirSync("./plugins/").forEach((plugin) => {
@@ -67,16 +63,10 @@ require("./plugins/" + plugin);
 }
 });
 console.log('Plugins installed successful ✅')
-console.log('Bot connected to whatsapp ✅')
+console.log('Bot connected to whatsapp ✅')
+        let up = CORNEH-TC connected successful ✅\n\nPREFIX: ${prefix};
 
-let up = `Wa-BOT connected successful ✅\n\nPREFIX: ${prefix}`;
-
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://telegra.ph/file/900435c6d3157c98c3c88.jpg` }, caption: up })
-
-}
-})
-conn.ev.on('creds.update', saveCreds)  
-
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: https://telegra.ph/file/900435c6d3157c98c3c88.jpg }, caption: up })
 conn.ev.on('messages.upsert', async(mek) => {
 mek = mek.messages[0]
 if (!mek.message) return	
@@ -107,10 +97,9 @@ const groupAdmins = isGroup ? await getGroupAdmins(participants) : ''
 const isBotAdmins = isGroup ? groupAdmins.includes(botNumber2) : false
 const isAdmins = isGroup ? groupAdmins.includes(sender) : false
 const reply = (teks) => {
-conn.sendMessage(from, { text: teks }, { quoted: mek })
+conn.sendMessage(from, { text: teks }, { quoted: mek })
 }
-
-conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
+        conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
               let mime = '';
               let res = await axios.head(url)
               mime = res.headers['content-type']
@@ -129,12 +118,9 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
               }
               if (mime.split("/")[0] === "audio") {
                 return conn.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options }, { quoted: quoted, ...options })
-              }
-            }
-
-
-const events = require('./command')
-const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
+              }
+            }
+        const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
 if (isCmd) {
 const cmd = events.commands.find((cmd) => cmd.pattern === (cmdName)) || events.commands.find((cmd) => cmd.alias && cmd.alias.includes(cmdName))
 if (cmd) {
@@ -163,14 +149,15 @@ mek.type === "stickerMessage"
 ) {
 command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply})
 }});
-//============================================================================ 
-
-})
+//============================================================================
+        })
 }
 app.get("/", (req, res) => {
-res.send("hey, bot started✅");
+res.send("Hey,CORNEH-TC started✅");
 });
-app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
+app.listen(port, () => console.log(Server listening on port http://localhost:${port}));
 setTimeout(() => {
 connectToWA()
-}, 4000);  
+}, 4000);
+
+        
