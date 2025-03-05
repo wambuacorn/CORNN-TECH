@@ -21,7 +21,7 @@
     "Corneh-Tech"
    ],
   "author": "Corneh Tech",
-  "license": "",MIT
+  "license": "MIT",
   "engines": {
     "node": "18.x",
     "npm": ">=9.6.3"
