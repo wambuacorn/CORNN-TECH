@@ -1,0 +1,31 @@
+{
+  "name": "CORNEH-CT",
+  "description": "Javascript WhatsApp bot made by YourName",
+  "logo": "https://files.catbox.moe/pvir8g.png",
+  "keywords": ["bot"],
+  "success_url": "/",
+
+  "env": {
+    "SESSION_ID": {
+      "description": "Put the session-id here.",
+      "required": true
+    },  
+
+    "ALIVE_IMG": {
+      "description": "https://files.catbox.moe/f2n59b.jpg",
+      "required": true
+    },
+    
+    "ALIVE_MSG": {
+      "description": "*HELLO 👋, CORNEH CT is live💥",
+      "required": true
+    }   
+},
+
+     "buildpacks": [
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+        }
+     ],
+  "stack": "heroku-24"
+}
