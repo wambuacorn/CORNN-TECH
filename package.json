@@ -36,7 +36,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/wambuacorn/CORNN-TECH"
+        "url": "git+https://github.com/wambuacorn/CORNN-TECH.git"
     },
     "dependencies": {
         "@whiskeysockets/baileys": "git+https://github.com/AbhishekSuresh2/Baileys.git",
@@ -65,5 +65,5 @@
         "simple-git": "^3.20.0",
         "uuid": "^11.0.3",
         "wa-sticker-formatter": "^4.4.4"
-    }
+    }
 }
